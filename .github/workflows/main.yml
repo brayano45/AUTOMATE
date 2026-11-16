@@ -1,10 +1,9 @@
-name: Daily Contribution
+name: Contribution quotidienne
 
 on:
   schedule:
-    - cron: '0 7 * * *'  
-
-  workflow_dispatch:       # Permet de le lancer manuellement
+    - cron: '20 23 * * *'   # 00h20 heure Cameroun
+  workflow_dispatch:
 
 jobs:
   contribute:
@@ -19,7 +18,7 @@ jobs:
 
       - name: Make daily commit
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "brayano45"
+          git config user.email "brayankameni5@gmail.com"
           git commit --allow-empty -m "Daily contribution $(date +'%Y-%m-%d')"
           git push
